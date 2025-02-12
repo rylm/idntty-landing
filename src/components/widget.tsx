@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import {
@@ -45,8 +47,8 @@ const widgetVariants = cva(
       },
       size: {
         tiny: 'w-[180px] h-[180px]',
-        long: 'w-[180px] h-[400px]',
-        tall: 'w-[400px] h-[180px]',
+        tall: 'w-[180px] h-[400px]',
+        long: 'w-[400px] h-[180px]',
         large: 'w-[400px] h-[400px]',
       },
     },
@@ -141,7 +143,7 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
               Icon={Bookmark}
               strokeClassName="stroke-gray-900 group-hover:stroke-orange-500"
             />
-            <div className="text-center text-base font-medium -tracking-[0.2px] text-gray-900">
+            <div className="text-left text-base font-medium -tracking-[0.2px] text-gray-900 px-[20px] pt-[30px]">
               {value?.toString() ?? ''}
             </div>
           </div>
@@ -197,7 +199,11 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
             </div>
           </div>
         );
-      case 'hobby':
+      case 'hobby': {
+        const internalValue = {
+          Gaming: 'gaming',
+          default: 'default',
+        }[value?.toString() ?? 'default'];
         return (
           <div
             className={cn(
@@ -209,9 +215,7 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
             {...props}
           >
             <img
-              src={`https://d1nyjrmwcoi38d.cloudfront.net/hobby/${(
-                value?.toString() ?? 'default'
-              ).toLowerCase()}.png`}
+              src={`https://d1nyjrmwcoi38d.cloudfront.net/hobby/${internalValue}.png`}
               alt={value?.toString() ?? ''}
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -228,6 +232,7 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
             )}
           </div>
         );
+      }
       case 'relationship': {
         const internalValue = {
           'Looking for Love': 'looking',
