@@ -11,14 +11,14 @@ import {
 import EncryptedWidget from '@/components/encrypted-widget';
 import Header from '@/components/header';
 import Widget from '@/components/widget';
-import Button from '@/components/button/button';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/carousel';
+// import Button from '@/components/button/button';
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from '@/components/carousel';
 import {
   Accordion,
   AccordionContent,
@@ -614,7 +614,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col py-[96px] items-center gap-[64px] w-full">
+      {/* <div className="flex flex-col py-[96px] items-center gap-[64px] w-full">
         <div className="flex max-w-[1280px] px-[32px] w-full flex-col gap-[64px]">
           <div className="flex justify-between gap-y-[32px] flex-wrap">
             <div className="flex min-w-[480px] max-w-[768px] flex-col gap-[20px] grow-1 shrink-0 basis-0">
@@ -644,7 +644,7 @@ export default function Home() {
             </div>
           </Carousel>
         </div>
-      </div>
+      </div> */}
       <div className="flex flex-col py-[96px] items-center gap-[64px] w-full">
         <div className="flex flex-col max-w-[1280px] px-[32px] gap-[32px] items-center">
           <div className="max-w-[768px] flex flex-col items-center gap-[20px]">
@@ -661,60 +661,81 @@ export default function Home() {
             type="multiple"
             className="flex max-w-[768px] flex-col gap-[16px]"
           >
-            <AccordionItem value="trial">
+            <AccordionItem value="account-types">
               <AccordionTrigger>
-                Is there a free trial available?
+                What types of digital identity are there and what are the
+                differences?
               </AccordionTrigger>
               <AccordionContent>
-                Yes, you can try us for free for 30 days. If you want,
-                we&apos;ll provide you with a free, personalized 30-minute
-                onboarding call to get you up and running as soon as possible.
+                - There are two types of digital identity: public (authority)
+                and private (identity).
+                <br />
+                - Public (authority): Designed for companies, communities, and
+                organizations. All information is public, and these entities can
+                issue digital badges.
+                <br />- Private (identity): Designed for individuals. You
+                control what information is visible and to whom, allowing
+                selective sharing of personal data.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="change-plan">
-              <AccordionTrigger>Can I change my plan later?</AccordionTrigger>
-              <AccordionContent>
-                Yes, you can try us for free for 30 days. If you want,
-                we&apos;ll provide you with a free, personalized 30-minute
-                onboarding call to get you up and running as soon as possible.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="cancellation-policy">
+            <AccordionItem value="validation">
               <AccordionTrigger>
-                What is your cancellation policy?
+                Who can validate my private data??
               </AccordionTrigger>
               <AccordionContent>
-                Yes, you can try us for free for 30 days. If you want,
-                we&apos;ll provide you with a free, personalized 30-minute
-                onboarding call to get you up and running as soon as possible.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="invoice">
-              <AccordionTrigger>
-                Can other info be added to an invoice?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes, you can try us for free for 30 days. If you want,
-                we&apos;ll provide you with a free, personalized 30-minute
-                onboarding call to get you up and running as soon as possible.
+                Anyone in the network can validate your data. However, if you
+                modify your data, all previous validations are reset, and new
+                validations will be required.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="billing">
-              <AccordionTrigger>How does billing work?</AccordionTrigger>
+              <AccordionTrigger>How and what am I paying for?</AccordionTrigger>
               <AccordionContent>
-                Yes, you can try us for free for 30 days. If you want,
-                we&apos;ll provide you with a free, personalized 30-minute
-                onboarding call to get you up and running as soon as possible.
+                You use platform tokens to pay for activities related to
+                storing, modifying, and confirming data on the blockchain. All
+                other features and services are free of charge.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="change-email">
+            <AccordionItem value="blockchain-storage">
               <AccordionTrigger>
-                How do I change my account email?
+                What information about me is stored on the blockchain?
               </AccordionTrigger>
               <AccordionContent>
-                Yes, you can try us for free for 30 days. If you want,
-                we&apos;ll provide you with a free, personalized 30-minute
-                onboarding call to get you up and running as soon as possible.
+                We do not store any private information in clear or encrypted
+                form on the blockchain (unless you choose to put it there
+                yourself). Only a hash of your data is stored.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="db">
+              <AccordionTrigger>
+                What information about me is stored in your database?
+              </AccordionTrigger>
+              <AccordionContent>
+                Your data is stored encrypted with your private key. Even we
+                cannot read or recover it without your key. That&apos;s why we
+                strongly recommend keeping your key safe. All encryption and
+                decryption happen in your browser.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="account-recovery">
+              <AccordionTrigger>
+                Can I recover my account if I lose my private key?
+              </AccordionTrigger>
+              <AccordionContent>
+                No, we cannot recover your account if you lose your private key.
+                Since your data is encrypted with your key and we do not store a
+                backup, it is impossible for anyone – including us – to retrieve
+                it. We strongly recommend securely storing your private key in
+                multiple safe locations.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="node">
+              <AccordionTrigger>Can I deploy my node?</AccordionTrigger>
+              <AccordionContent>
+                Yes, of course! You can deploy your own node, earn tokens, and
+                even become a block validator. By doing so, you contribute to
+                maintaining the network and receive rewards for your
+                participation.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
