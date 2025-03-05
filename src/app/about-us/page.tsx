@@ -4,16 +4,17 @@ import { Pentagon, Certificate02 } from 'untitledui-js/react';
 import Header from '@/components/header';
 import Button from '@/components/button/button';
 import Footer from '@/components/footer';
+
 export default function AboutUs() {
   return (
     <div className="flex flex-col items-center bg-white">
       <Header />
-      <div className="flex py-[96px] flex-col items-center gap-[40px] w-full">
-        <div className="flex max-w-[1280px] px-[32px] flex-col items-center gap-[12px]">
-          <div className="self-stretch text-brand-700 text-center text-base/normal font-semibold">
+      <div className="flex py-[48px] md:py-[96px] flex-col items-center gap-[24px] md:gap-[40px] w-full">
+        <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col items-center gap-[8px] md:gap-[12px]">
+          <div className="self-stretch text-brand-700 text-center text-[14px]/normal md:text-base/normal font-semibold">
             About us
           </div>
-          <div className="self-stretch text-gray-900 text-center text-[48px]/[60px] font-semibold -tracking-[0.96px]">
+          <div className="self-stretch text-gray-900 text-center text-[28px]/[36px] md:text-[48px]/[60px] font-semibold -tracking-[0.96px]">
             The Evolution of Human Identity:
             <br />
             From Ancient Times to the Digital
@@ -22,13 +23,13 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="flex py-[96px] flex-col items-center gap-[96px] w-full">
-        <div className="flex max-w-[1280px] px-[6px] flex-col gap-[32px] items-center">
-          <div className="flex px-[44px] flex-col items-center gap-[20px]">
-            <div className="self-stretch text-gray-900 text-center text-[36px]/[44px] font-semibold -tracking-[0.72px]">
+      <div className="flex py-[48px] md:py-[96px] flex-col items-center gap-[48px] md:gap-[96px] w-full">
+        <div className="flex max-w-[1280px] px-[16px] md:px-[6px] flex-col gap-[24px] md:gap-[32px] items-center">
+          <div className="flex px-[16px] md:px-[44px] flex-col items-center gap-[16px] md:gap-[20px]">
+            <div className="self-stretch text-gray-900 text-center text-[24px]/[32px] md:text-[36px]/[44px] font-semibold -tracking-[0.72px]">
               We&apos;re a mission driven company
             </div>
-            <div className="self-stretch text-gray-600 text-xl/normal">
+            <div className="self-stretch text-gray-600 text-[16px]/normal md:text-xl/normal">
               The evolution of human identity is a fascinating journey from
               ancient, community-based recognition to the modern, digital
               systems that shape how we authenticate ourselves today. In the
@@ -268,6 +269,7 @@ export default function AboutUs() {
             className="h-full w-auto object-contain"
           />
         </div>
+
         <div className="flex flex-col">
           <div className="pt-[96px] pb-[160px] flex flex-col items-center gap-[64px] self-stretch">
             <div className="flex max-w-[1280px] px-[32px] gap-y-[48px] gap-x-[64px] self-stretch flex-wrap">

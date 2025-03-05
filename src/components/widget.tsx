@@ -51,7 +51,7 @@ const widgetVariants = cva(
       },
       size: {
         tiny: 'w-[180px] h-[180px]',
-        long: 'w-[400px] h-[180px]',
+        long: 'w-full md:w-[400px] h-[180px]',
         tall: 'w-[180px] h-[400px]',
         large: 'w-[400px] h-[400px]',
       },
