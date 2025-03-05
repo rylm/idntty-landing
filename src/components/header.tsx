@@ -39,14 +39,16 @@ export default function Header() {
       </div>
       <div className="flex items-center gap-[12px]">
         <Link
-          href="/login"
+          href="https://my.idntty.io/account/login-with-passkey"
           className="flex justify-center items-center text-gray-600 text-base font-semibold py-[10px] px-[16px] rounded-lg"
         >
           Login
         </Link>
-        <Button variant="primary" size="lg">
-          Get IDNTTY
-        </Button>
+        <Link href="https://my.idntty.io/account/type">
+          <Button variant="primary" size="lg">
+            Get IDNTTY
+          </Button>
+        </Link>
       </div>
     </header>
   );

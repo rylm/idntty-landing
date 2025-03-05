@@ -7,18 +7,19 @@ import {
   motion,
   AnimatePresence,
 } from 'motion/react';
+import lookup from 'country-code-lookup';
 
 import EncryptedWidget from '@/components/encrypted-widget';
 import Header from '@/components/header';
 import Widget from '@/components/widget';
-// import Button from '@/components/button/button';
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from '@/components/carousel';
+import Button from '@/components/button/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/carousel';
 import {
   Accordion,
   AccordionContent,
@@ -26,6 +27,7 @@ import {
   AccordionTrigger,
 } from '@/components/accordion';
 import Footer from '@/components/footer';
+import Link from 'next/link';
 
 const containerVariants = {
   hidden: { opacity: 1 },
@@ -63,20 +65,52 @@ const getRandomDate = () => {
 };
 
 const getRandomCountry = () => {
-  const countries = [
-    'US',
-    'GB',
-    'FR',
-    'DE',
-    'ES',
-    'IT',
-    'JP',
-    'CA',
-    'AU',
-    'BR',
-  ];
-  return countries[Math.floor(Math.random() * countries.length)];
+  const countryCodes = lookup.countries.map(
+    (country: { iso2: string }) => country.iso2
+  );
+  const randomIndex = Math.floor(Math.random() * countryCodes.length);
+  return countryCodes[randomIndex];
 };
+
+// Function to get a random badge from the list
+const getRandomBadge = () => {
+  const badgeIds = [
+    '3b5b7dc7-5246-442e-ab0f-709796624a97',
+    '5150560c-f4e0-421a-9ab2-051b23ec754a',
+    '55ee01c5-2499-4602-a6cb-7cd3b0b6f112',
+    '5db19864-1375-4317-96ba-239cc95554c4',
+    '69ae6dd5-cda7-4ef1-88dd-9ac06a912c19',
+    '859ce018-85cd-48a4-a2f6-4bbc9ef0a87c',
+    '8ad7e179-650a-4ccc-b083-efb26539915f',
+    '985cabc0-6a8c-4f2e-aa83-4dbe861e79b1',
+    'a1beae70-4434-45eb-94a4-2d6411a83096',
+    'a964448a-7dd7-446a-9154-aae4c8f39af0',
+    'c9e7caf2-b340-4ad2-8482-c7177e87ebe0',
+    'd3ca86f6-d26b-4055-aeb7-125dc22a95fe',
+    'e6d84e7d-ee89-4e0d-bdf5-9d1d5dedc9ad',
+    'ee1d1e95-5ca7-48c4-804b-d168a04bde41',
+    'f98c8b27-aa65-48e8-93d0-6badab21e4ba',
+  ];
+  const randomIndex = Math.floor(Math.random() * badgeIds.length);
+  return `https://d1nyjrmwcoi38d.cloudfront.net/badges/${badgeIds[randomIndex]}`;
+};
+
+// Ensure we don't select the same badge twice
+const getUniqueRandomBadges = () => {
+  const usedBadges = new Set();
+
+  return () => {
+    let badge = getRandomBadge();
+    // Try to get a unique badge if we've already used this one
+    while (usedBadges.has(badge) && usedBadges.size < 15) {
+      badge = getRandomBadge();
+    }
+    usedBadges.add(badge);
+    return badge;
+  };
+};
+
+const getRandomBadges = getUniqueRandomBadges();
 
 const widgetConfigs = [
   {
@@ -88,14 +122,12 @@ const widgetConfigs = [
   {
     size: 'tiny',
     type: 'badge' as const,
-    value:
-      'https://d1nyjrmwcoi38d.cloudfront.net/efe76f11-e4a4-4df7-b0ab-35542976e99c.png',
+    getValue: getRandomBadges,
   },
   {
     size: 'tiny',
     type: 'badge' as const,
-    value:
-      'https://d1nyjrmwcoi38d.cloudfront.net/3f9c0163-cece-4e26-8c5b-ca2141270a57.png',
+    getValue: getRandomBadges,
   },
   {
     size: 'long',
@@ -386,7 +418,11 @@ export default function Home() {
               variants={childVariants}
               className="rotate-23 mt-[-60px] ml-[-20px]"
             >
-              <Widget size="tiny" type="citizenship" value="US" />
+              <Widget
+                size="tiny"
+                type="citizenship"
+                value={getRandomCountry()}
+              />
             </motion.div>
             <motion.div
               variants={childVariants}
@@ -403,7 +439,7 @@ export default function Home() {
                 size="tiny"
                 type="badge"
                 className="overflow-hidden"
-                value="https://d1nyjrmwcoi38d.cloudfront.net/767b7de0-df0f-4f49-a121-0ba4a31a86e2.png"
+                value={getRandomBadges()}
               />
             </motion.div>
             <motion.div
@@ -420,11 +456,7 @@ export default function Home() {
               variants={childVariants}
               className="rotate-4 mt-[-20px] ml-[-20px]"
             >
-              <Widget
-                size="tiny"
-                type="age"
-                value={new Date(Date.parse('2001-05-18'))}
-              />
+              <Widget size="tiny" type="age" value={getRandomDate()} />
             </motion.div>
 
             <motion.div
@@ -605,16 +637,21 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-[560px] bg-gray-100 py-[56px] pl-[40px] rounded-[24px]">
+          <div className="relative w-[560px] bg-gray-100 py-[56px] pl-[40px] rounded-[24px]">
             <img
               src="/mockup.png"
               alt="Mockup"
               className="w-full h-auto mr-[-32px]"
             />
+            <img
+              src="/arrow.svg"
+              alt="Arrow"
+              className="absolute -top-[150px] left-[50px]"
+            />
           </div>
         </div>
       </div>
-      {/* <div className="flex flex-col py-[96px] items-center gap-[64px] w-full">
+      <div className="flex flex-col py-[96px] items-center gap-[64px] w-full">
         <div className="flex max-w-[1280px] px-[32px] w-full flex-col gap-[64px]">
           <div className="flex justify-between gap-y-[32px] flex-wrap">
             <div className="flex min-w-[480px] max-w-[768px] flex-col gap-[20px] grow-1 shrink-0 basis-0">
@@ -626,17 +663,35 @@ export default function Home() {
                 finances.
               </div>
             </div>
-            <Button size="xl" className="self-start">
-              Create IDNTTY
-            </Button>
+            <Link href="https://my.idntty.io/account/type">
+              <Button size="xl" className="self-start">
+                Create IDNTTY
+              </Button>
+            </Link>
           </div>
           <Carousel className="flex flex-col gap-[32px]">
             <CarouselContent>
-              {Array.from({ length: 10 }).map((_, index) => (
-                <CarouselItem key={index} className="basis-1/6">
-                  <Widget size="tiny" type="name" value="Alex" />
-                </CarouselItem>
-              ))}
+              <CarouselItem className="basis-1/6">
+                <Widget
+                  size="tiny"
+                  type="link-text"
+                  value='{"text": "Women Who Code", "linkUrl": "https://womenwhocode.com"}'
+                />
+              </CarouselItem>
+              <CarouselItem className="basis-1/6">
+                <Widget
+                  size="tiny"
+                  type="link-text"
+                  value='{"text": "CSI", "linkUrl": "https://www.controlsi.co.za/"}'
+                />
+              </CarouselItem>
+              <CarouselItem className="basis-1/6">
+                <Widget
+                  size="tiny"
+                  type="link-text"
+                  value='{"text": "La Crème", "linkUrl": "https://www.lacreme.kz/"}'
+                />
+              </CarouselItem>
             </CarouselContent>
             <div className="flex gap-x-[32px]">
               <CarouselPrevious />
@@ -644,7 +699,7 @@ export default function Home() {
             </div>
           </Carousel>
         </div>
-      </div> */}
+      </div>
       <div className="flex flex-col py-[96px] items-center gap-[64px] w-full">
         <div className="flex flex-col max-w-[1280px] px-[32px] gap-[32px] items-center">
           <div className="max-w-[768px] flex flex-col items-center gap-[20px]">

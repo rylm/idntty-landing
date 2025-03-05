@@ -20,3 +20,5 @@ export interface UntitledProps extends ElementAttributes {
     };
   };
 }
+
+export type GridItemContent = string | Date;
