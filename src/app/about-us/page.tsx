@@ -4,8 +4,11 @@ import { Pentagon, Certificate02 } from 'untitledui-js/react';
 import Header from '@/components/header';
 import Button from '@/components/button/button';
 import Footer from '@/components/footer';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function AboutUs() {
+  const isMobile = useIsMobile();
+
   return (
     <div className="flex flex-col items-center bg-white">
       <Header />
@@ -15,10 +18,7 @@ export default function AboutUs() {
             About us
           </div>
           <div className="self-stretch text-gray-900 text-center text-[28px]/[36px] md:text-[48px]/[60px] font-semibold -tracking-[0.96px]">
-            The Evolution of Human Identity:
-            <br />
-            From Ancient Times to the Digital
-            <br />
+            The Evolution of Human Identity: From Ancient Times to the Digital{' '}
             Age
           </div>
         </div>
@@ -50,18 +50,20 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="flex h-[770px] items-stretch">
-          <div className="flex py-[16px] pr-[64px] justify-end items-center gap-[64px] grow-1 shrink-0 basis-0">
-            <div className="flex max-w-[560px] px-[32px] grow-1 shrink-0 basis-0">
-              <div className="flex flex-col gap-[20px] grow-1 shrink-0 basis-0">
+
+        {/* First content section */}
+        <div className="flex flex-col md:flex-row md:h-[770px] w-full max-w-[1280px] px-[16px] md:px-0 items-center">
+          <div className="flex py-[16px] md:pr-[64px] justify-center md:justify-end items-center gap-[24px] md:gap-[64px] w-full md:w-1/2">
+            <div className="flex max-w-full md:max-w-[560px] px-0 md:px-[32px] w-full">
+              <div className="flex flex-col gap-[20px] w-full">
                 <div className="flex w-[48px] h-[48px] p-[12px] justify-center items-center rounded-full bg-brand-100">
                   <Pentagon size="24" className="stroke-brand-600" />
                 </div>
                 <div className="flex flex-col gap-[16px]">
-                  <div className="text-gray-900 text-[30px]/[38px] font-semibold">
+                  <div className="text-gray-900 text-[24px]/[32px] md:text-[30px]/[38px] font-semibold">
                     Ancient Identity: Recognition and Oral Declarations
                   </div>
-                  <div className="text-gray-600 text-lg/[28px]">
+                  <div className="text-gray-600 text-base/[24px] md:text-lg/[28px]">
                     In the earliest human societies, identity was a matter of
                     personal recognition. People lived in small, close-knit
                     communities where everyone knew each other by face, voice,
@@ -89,29 +91,28 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <img
-            src="/about-us/ancient.png"
-            alt="Ancient Identity"
-            className="h-full w-auto object-contain"
-          />
+          <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-start">
+            <img
+              src="/about-us/ancient.png"
+              alt="Ancient Identity"
+              className="h-auto md:h-full w-auto max-w-full object-contain"
+            />
+          </div>
         </div>
-        <div className="flex h-[640px] items-stretch">
-          <img
-            src="/about-us/written.png"
-            alt="Ancient Identity"
-            className="h-full w-auto object-contain"
-          />
-          <div className="flex py-[16px] pl-[120px] justify-end items-center gap-[64px] grow-1 shrink-0 basis-0">
-            <div className="flex max-w-[560px] px-[32px] grow-1 shrink-0 basis-0">
-              <div className="flex flex-col gap-[20px] grow-1 shrink-0 basis-0">
+
+        {/* Second content section */}
+        <div className="flex flex-col md:flex-row-reverse md:h-[640px] w-full max-w-[1280px] px-[16px] md:px-0 items-center">
+          <div className="flex py-[16px] md:pl-[120px] justify-center md:justify-start items-center gap-[24px] md:gap-[64px] w-full md:w-1/2">
+            <div className="flex max-w-full md:max-w-[560px] px-0 md:px-[32px] w-full">
+              <div className="flex flex-col gap-[20px] w-full">
                 <div className="flex w-[48px] h-[48px] p-[12px] justify-center items-center rounded-full bg-brand-100">
                   <Certificate02 size="24" className="stroke-brand-600" />
                 </div>
                 <div className="flex flex-col gap-[16px]">
-                  <div className="text-gray-900 text-[30px]/[38px] font-semibold">
+                  <div className="text-gray-900 text-[24px]/[32px] md:text-[30px]/[38px] font-semibold">
                     The Age of Written Records and Seals
                   </div>
-                  <div className="text-gray-600 text-lg/[28px]">
+                  <div className="text-gray-600 text-base/[24px] md:text-lg/[28px]">
                     As civilizations expanded and trade networks grew, the need
                     for more formal identity systems became apparent. Ancient
                     societies such as Mesopotamia, Egypt, and Rome began
@@ -132,19 +133,28 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
+          <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-end">
+            <img
+              src="/about-us/written.png"
+              alt="Written Records"
+              className="h-auto md:h-full w-auto max-w-full object-contain"
+            />
+          </div>
         </div>
-        <div className="flex h-[878px] items-stretch">
-          <div className="flex py-[16px] pr-[64px] justify-end items-center gap-[64px] grow-1 shrink-0 basis-0">
-            <div className="flex max-w-[560px] px-[32px] grow-1 shrink-0 basis-0">
-              <div className="flex flex-col gap-[20px] grow-1 shrink-0 basis-0">
+
+        {/* Third content section */}
+        <div className="flex flex-col md:flex-row md:h-[878px] w-full max-w-[1280px] px-[16px] md:px-0 items-center">
+          <div className="flex py-[16px] md:pr-[64px] justify-center md:justify-end items-center gap-[24px] md:gap-[64px] w-full md:w-1/2">
+            <div className="flex max-w-full md:max-w-[560px] px-0 md:px-[32px] w-full">
+              <div className="flex flex-col gap-[20px] w-full">
                 <div className="flex w-[48px] h-[48px] p-[12px] justify-center items-center rounded-full bg-brand-100">
                   <Pentagon size="24" className="stroke-brand-600" />
                 </div>
                 <div className="flex flex-col gap-[16px]">
-                  <div className="text-gray-900 text-[30px]/[38px] font-semibold">
+                  <div className="text-gray-900 text-[24px]/[32px] md:text-[30px]/[38px] font-semibold">
                     The Rise of Bureaucratic Identity Systems
                   </div>
-                  <div className="text-gray-600 text-lg/[28px]">
+                  <div className="text-gray-600 text-base/[24px] md:text-lg/[28px]">
                     With the rise of nation-states and expanding bureaucratic
                     institutions, identity systems became more structured and
                     standardized. The Renaissance and early modern period saw
@@ -176,29 +186,28 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <img
-            src="/about-us/bureaucratic.png"
-            alt="Ancient Identity"
-            className="h-full w-auto object-contain"
-          />
+          <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-start">
+            <img
+              src="/about-us/bureaucratic.png"
+              alt="Bureaucratic Identity"
+              className="h-auto md:h-full w-auto max-w-full object-contain"
+            />
+          </div>
         </div>
-        <div className="flex h-[868px] items-stretch">
-          <img
-            src="/about-us/industrial.png"
-            alt="Ancient Identity"
-            className="h-full w-auto object-contain"
-          />
-          <div className="flex py-[16px] pl-[80px] justify-end items-center gap-[64px] grow-1 shrink-0 basis-0">
-            <div className="flex max-w-[560px] px-[32px] grow-1 shrink-0 basis-0">
-              <div className="flex flex-col gap-[20px] grow-1 shrink-0 basis-0">
+
+        {/* Fourth content section */}
+        <div className="flex flex-col md:flex-row-reverse md:h-[868px] w-full max-w-[1280px] px-[16px] md:px-0 items-center">
+          <div className="flex py-[16px] md:pl-[80px] justify-center md:justify-start items-center gap-[24px] md:gap-[64px] w-full md:w-1/2">
+            <div className="flex max-w-full md:max-w-[560px] px-0 md:px-[32px] w-full">
+              <div className="flex flex-col gap-[20px] w-full">
                 <div className="flex w-[48px] h-[48px] p-[12px] justify-center items-center rounded-full bg-brand-100">
                   <Certificate02 size="24" className="stroke-brand-600" />
                 </div>
                 <div className="flex flex-col gap-[16px]">
-                  <div className="text-gray-900 text-[30px]/[38px] font-semibold">
+                  <div className="text-gray-900 text-[24px]/[32px] md:text-[30px]/[38px] font-semibold">
                     The Industrial Age and Standardized Identity
                   </div>
-                  <div className="text-gray-600 text-lg/[28px]">
+                  <div className="text-gray-600 text-base/[24px] md:text-lg/[28px]">
                     The Industrial Age brought rapid urbanization, global
                     migration, and the rise of large-scale institutions, all of
                     which demanded more reliable and standardized identity
@@ -230,19 +239,28 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
+          <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-end">
+            <img
+              src="/about-us/industrial.png"
+              alt="Industrial Age"
+              className="h-auto md:h-full w-auto max-w-full object-contain"
+            />
+          </div>
         </div>
-        <div className="flex h-[800px] items-stretch">
-          <div className="flex py-[16px] pr-[140px] justify-end items-center gap-[64px] grow-1 shrink-0 basis-0">
-            <div className="flex max-w-[560px] px-[32px] grow-1 shrink-0 basis-0">
-              <div className="flex flex-col gap-[20px] grow-1 shrink-0 basis-0">
+
+        {/* Fifth content section */}
+        <div className="flex flex-col md:flex-row md:h-[800px] w-full max-w-[1280px] px-[16px] md:px-0 items-center">
+          <div className="flex py-[16px] md:pr-[140px] justify-center md:justify-end items-center gap-[24px] md:gap-[64px] w-full md:w-1/2">
+            <div className="flex max-w-full md:max-w-[560px] px-0 md:px-[32px] w-full">
+              <div className="flex flex-col gap-[20px] w-full">
                 <div className="flex w-[48px] h-[48px] p-[12px] justify-center items-center rounded-full bg-brand-100">
                   <Pentagon size="24" className="stroke-brand-600" />
                 </div>
                 <div className="flex flex-col gap-[16px]">
-                  <div className="text-gray-900 text-[30px]/[38px] font-semibold">
+                  <div className="text-gray-900 text-[24px]/[32px] md:text-[30px]/[38px] font-semibold">
                     The Digital Age: Centralized and Online Identities
                   </div>
-                  <div className="text-gray-600 text-lg/[28px]">
+                  <div className="text-gray-600 text-base/[24px] md:text-lg/[28px]">
                     The digital revolution transformed identity from physical
                     documents to centralized databases and online profiles.
                     Governments, financial institutions, and corporations began
@@ -263,22 +281,25 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <img
-            src="/about-us/digital.png"
-            alt="Ancient Identity"
-            className="h-full w-auto object-contain"
-          />
+          <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-start">
+            <img
+              src="/about-us/digital.png"
+              alt="Digital Age"
+              className="h-auto md:h-full w-auto max-w-full object-contain"
+            />
+          </div>
         </div>
 
-        <div className="flex flex-col">
-          <div className="pt-[96px] pb-[160px] flex flex-col items-center gap-[64px] self-stretch">
-            <div className="flex max-w-[1280px] px-[32px] gap-y-[48px] gap-x-[64px] self-stretch flex-wrap">
-              <div className="flex flex-col min-w-[480px] max-w-[768px] gap-[20px] grow-1 shrink-0 basis-0">
+        {/* Future section */}
+        <div className="flex flex-col w-full">
+          <div className="pt-[48px] md:pt-[96px] pb-[80px] md:pb-[160px] flex flex-col items-center gap-[32px] md:gap-[64px] self-stretch">
+            <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col md:flex-row gap-y-[32px] md:gap-y-[48px] gap-x-[32px] md:gap-x-[64px] self-stretch flex-wrap">
+              <div className="flex flex-col w-full md:min-w-[480px] md:max-w-[768px] gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
                 <div className="flex flex-col gap-[16px]">
-                  <div className="text-gray-900 text-[36px]/[44px] font-semibold -tracking-[0.72px]">
+                  <div className="text-gray-900 text-[28px]/[36px] md:text-[36px]/[44px] font-semibold -tracking-[0.72px]">
                     The Future: Self-Sovereign Identity & Verifiable Credentials
                   </div>
-                  <div className="text-gray-600 text-xl/normal">
+                  <div className="text-gray-600 text-[16px]/[24px] md:text-xl/normal">
                     The future of identity is moving towards greater personal
                     control and security through Self-Sovereign Identity (SSI)
                     and Verifiable Credentials (VCs). With the limitations of
@@ -296,8 +317,8 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col min-w-[480px] max-w-[768px] gap-[32px] grow-1 shrink-0 basis-0">
-                <div className="text-gray-600 text-base/normal">
+              <div className="flex flex-col w-full md:min-w-[480px] md:max-w-[768px] gap-[24px] md:gap-[32px] md:grow-1 md:shrink-0 md:basis-0">
+                <div className="text-gray-600 text-[16px]/[24px] md:text-base/normal">
                   Verifiable Credentials further enhance this concept by
                   providing tamper-proof, cryptographically signed proofs of
                   identity and qualifications. Whether it&apos;s a digital badge
@@ -312,7 +333,7 @@ export default function AboutUs() {
                   sharing only the necessary information and reducing the risk
                   of fraud or identity theft.
                 </div>
-                <div className="text-gray-600 text-base/normal">
+                <div className="text-gray-600 text-[16px]/[24px] md:text-base/normal">
                   This shift to decentralized, self-sovereign identity and
                   verifiable credentials also opens the door for new
                   applications in a wide variety of sectors—from healthcare,
@@ -330,30 +351,32 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col pb-[96px] items-center -mt-[100px]">
-            <div className="flex max-w-[1280px] px-[32px] flex-col items-center">
+          <div className="flex flex-col pb-[48px] md:pb-[96px] items-center -mt-[50px] md:-mt-[100px]">
+            <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col items-center">
               <img
                 src="/about-us/future.png"
                 alt="Future"
-                className="w-[1280px] h-[560px] shadow-image object-cover"
+                className="w-full md:w-[1280px] h-auto md:h-[560px] shadow-image object-cover rounded-[16px]"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col py-[96px] justify-center items-center gap-[64px]">
-        <div className="flex max-w-[1280px] px-[32px] items-cente justify-center content-center gap-[64px]">
-          <div className="max-w-[768px] gap-[32px] inline-flex flex-col items-start">
-            <div className="flex min-w-[480px] gap-[20px] flex-col">
-              <div className="flex flex-col gap-[12px]">
+
+      {/* Join our team section */}
+      <div className="flex flex-col py-[48px] md:py-[96px] justify-center items-center gap-[48px] md:gap-[64px] w-full">
+        <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col md:flex-row items-center content-center gap-[48px] md:gap-[64px]">
+          <div className="max-w-full md:max-w-[768px] gap-[24px] md:gap-[32px] inline-flex flex-col items-start">
+            <div className="flex min-w-full md:min-w-[480px] gap-[16px] md:gap-[20px] flex-col">
+              <div className="flex flex-col gap-[8px] md:gap-[12px]">
                 <div className="text-brand-700 text-base/normal font-semibold -tracking-[0.72px]">
                   Join our team
                 </div>
-                <div className="text-gray-900 text-[36px]/[44px] font-semibold">
+                <div className="text-gray-900 text-[28px]/[36px] md:text-[36px]/[44px] font-semibold">
                   We&apos;re just getting started
                 </div>
               </div>
-              <div className="text-gray-600 text-xl/normal">
+              <div className="text-gray-600 text-[16px]/[24px] md:text-xl/normal">
                 Change isn&apos;t instant—it&apos;s a wild ride that takes time
                 and shakes up the status quo. But here&apos;s the deal:
                 there&apos;s a vibrant crew ready to flip the script. If
@@ -362,39 +385,43 @@ export default function AboutUs() {
                 transformation.
               </div>
             </div>
-            <Button size="xl">Become an ambassador</Button>
+            <Button size={isMobile ? 'lg' : 'xl'} className="w-full md:w-auto">
+              Become an ambassador
+            </Button>
           </div>
-          <div className="flex flex-col items-center justify-center">
-            {/* Top row: bottom edges aligned */}
-            <div className="flex items-end gap-4 mb-8">
+
+          {/* Photo grid - visible on all devices */}
+          <div className="flex flex-col items-center justify-center w-full">
+            {/* Top row */}
+            <div className="flex flex-wrap justify-center items-end gap-4 mb-4 md:mb-8">
               <img
                 src="/about-us/photo-1.png"
                 alt="Image 1"
-                className="h-auto max-w-xs"
+                className="h-auto w-[45%] md:w-auto md:max-w-xs"
               />
               <img
                 src="/about-us/photo-2.png"
                 alt="Image 2"
-                className="h-auto max-w-xs"
+                className="h-auto w-[45%] md:w-auto md:max-w-xs"
               />
             </div>
 
-            {/* Bottom row: top edges aligned */}
-            <div className="flex items-start gap-4">
+            {/* Bottom row */}
+            <div className="flex flex-wrap justify-center items-start gap-4">
               <img
                 src="/about-us/photo-3.png"
                 alt="Image 3"
-                className="h-auto max-w-xs"
+                className="h-auto w-[30%] md:w-auto md:max-w-xs"
               />
               <img
                 src="/about-us/photo-4.png"
                 alt="Image 4"
-                className="h-auto max-w-xs"
+                className="h-auto w-[30%] md:w-auto md:max-w-xs"
               />
               <img
                 src="/about-us/photo-5.png"
                 alt="Image 5"
-                className="h-auto max-w-xs"
+                className="h-auto w-[30%] md:w-auto md:max-w-xs"
               />
             </div>
           </div>

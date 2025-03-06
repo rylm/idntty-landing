@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Button from './button/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Menu01 } from 'untitledui-js/react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/sheet';
 
 export default function Header() {
   const router = useRouter();
@@ -40,17 +42,66 @@ export default function Header() {
         </div>
       </div>
       <div className="flex items-center gap-[8px] md:gap-[12px]">
-        <Link
-          href="https://my.idntty.io/account/login-with-passkey"
-          className="hidden md:flex justify-center items-center text-gray-600 text-base font-semibold py-[10px] px-[16px] rounded-lg"
-        >
-          Login
-        </Link>
-        <Link href="https://my.idntty.io/account/type">
-          <Button variant="primary" size={isMobile ? 'md' : 'lg'}>
-            {isMobile ? 'IDNTTY' : 'Get IDNTTY'}
-          </Button>
-        </Link>
+        {/* Desktop header options */}
+        {!isMobile ? (
+          <>
+            <Link
+              href="https://my.idntty.io/account/login-with-passkey"
+              className="flex justify-center items-center text-gray-600 text-base font-semibold py-[10px] px-[16px] rounded-lg"
+            >
+              Login
+            </Link>
+            <Link href="https://my.idntty.io/account/type">
+              <Button variant="primary" size="lg">
+                Get IDNTTY
+              </Button>
+            </Link>
+          </>
+        ) : (
+          /* Mobile hamburger menu */
+          <Sheet>
+            <SheetTrigger className="p-2">
+              <Menu01 size={24} />
+            </SheetTrigger>
+            <SheetContent className="bg-white">
+              <nav className="flex flex-col gap-6 mt-8">
+                {/* Action links */}
+                <div className="flex flex-col gap-4 pb-6 border-b border-gray-200">
+                  <Link
+                    href="https://my.idntty.io/account/type"
+                    className="w-full"
+                  >
+                    <Button variant="primary" size="md" className="w-full">
+                      Get IDNTTY
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://my.idntty.io/account/login-with-passkey"
+                    className="flex justify-center items-center text-gray-600 text-base font-semibold py-3 border border-gray-200 rounded-lg"
+                  >
+                    Login
+                  </Link>
+                </div>
+
+                {/* Navigation links */}
+                <div className="flex flex-col gap-4 pt-2">
+                  <Link
+                    href="/"
+                    className="text-gray-600 text-base font-semibold py-3"
+                  >
+                    Overview
+                  </Link>
+                  <Link
+                    href="/about-us"
+                    className="text-gray-600 text-base font-semibold py-3"
+                  >
+                    About Us
+                  </Link>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        )}
       </div>
     </header>
   );
