@@ -264,10 +264,10 @@ export default function Home() {
   });
 
   return (
-    <div className="flex flex-col items-center bg-white w-full overflow-x-hidden">
-      <div className="flex flex-col items-center h-auto md:h-[1120px] w-full overflow-x-hidden">
+    <div className="flex flex-col items-center bg-white w-full overflow-hidden">
+      <div className="flex flex-col items-center w-full overflow-hidden">
         <Header />
-        <div className="flex py-[48px] md:py-[96px] flex-col items-center gap-[32px] md:gap-[64px] px-[16px] md:px-0 w-full overflow-x-hidden">
+        <div className="flex py-[48px] md:py-[96px] flex-col items-center gap-[32px] md:gap-[64px] px-[16px] md:px-0 w-full overflow-hidden">
           <div className="flex flex-col items-center gap-[24px] md:gap-[32px]">
             <div className="flex flex-col items-center gap-[32px] md:gap-[48px]">
               <div className="flex flex-col items-center gap-[16px] md:gap-[24px] max-w-full md:max-w-[1024px] w-full">
@@ -381,7 +381,7 @@ export default function Home() {
       {/* "Open Ecosystem Built for Innovation" Section */}
       <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] bg-black w-full">
         <div className="flex flex-col md:flex-row max-w-[1280px] px-[16px] md:px-[32px] gap-[32px] md:gap-[64px]">
-          <div className="flex flex-col max-w-full md:max-w-[360px] gap-[20px] grow-1 shrink-0 basis-0">
+          <div className="flex flex-col max-w-full md:max-w-[360px] gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
             <div className="flex flex-col gap-[16px] md:gap-[24px] self-stretch">
               <img
                 src="/asterisk.svg"
@@ -399,8 +399,8 @@ export default function Home() {
               large enterprises.
             </div>
           </div>
-          <div className="flex flex-col md:flex-row justify-center gap-y-[24px] md:gap-y-[32px] gap-x-[24px] md:gap-x-[64px] grow-1 shrink-0 basis-0 flex-wrap">
-            <div className="flex min-w-[280px] md:min-w-[320px] max-w-full md:max-w-[560px] gap-[8px] grow-1 shrink-0 basis-0 flex-col self-stretch">
+          <div className="flex flex-col gap-y-[24px] md:gap-y-[32px] w-full md:flex-wrap md:flex-row md:gap-x-[64px] md:grow-1 md:shrink-0 md:basis-0">
+            <div className="flex w-full md:min-w-[280px] md:max-w-[560px] gap-[8px] md:grow-1 md:shrink-0 md:basis-0 flex-col self-stretch">
               <div className="self-stretch text-white text-[18px]/normal md:text-xl/normal font-semibold">
                 Employee Achievement & Corporate Rewards
               </div>
@@ -411,7 +411,7 @@ export default function Home() {
                 verified proof of their success.
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[320px] max-w-full md:max-w-[560px] gap-[8px] grow-1 shrink-0 basis-0 flex-col self-stretch">
+            <div className="flex w-full md:min-w-[280px] md:max-w-[560px] gap-[8px] md:grow-1 md:shrink-0 md:basis-0 flex-col self-stretch">
               <div className="self-stretch text-white text-[18px]/normal md:text-xl/normal font-semibold">
                 Community Recognition with Digital Badges
               </div>
@@ -422,7 +422,7 @@ export default function Home() {
                 across platforms.
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[320px] max-w-full md:max-w-[560px] gap-[8px] grow-1 shrink-0 basis-0 flex-col self-stretch">
+            <div className="flex w-full md:min-w-[280px] md:max-w-[560px] gap-[8px] md:grow-1 md:shrink-0 md:basis-0 flex-col self-stretch">
               <div className="self-stretch text-white text-[18px]/normal md:text-xl/normal font-semibold">
                 Verified Training Certifications for Education Providers
               </div>
@@ -433,7 +433,7 @@ export default function Home() {
                 proof of their expertise.
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[320px] max-w-full md:max-w-[560px] gap-[8px] grow-1 shrink-0 basis-0 flex-col self-stretch">
+            <div className="flex w-full md:min-w-[280px] md:max-w-[560px] gap-[8px] md:grow-1 md:shrink-0 md:basis-0 flex-col self-stretch">
               <div className="self-stretch text-white text-[18px]/normal md:text-xl/normal font-semibold">
                 Decentralized Customer Loyalty Programs
               </div>
@@ -449,7 +449,7 @@ export default function Home() {
       </div>
 
       {/* "Be the master of your digital identity" Section */}
-      <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] w-full">
+      <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] w-full overflow-hidden">
         <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col items-center md:items-end gap-[24px] md:gap-[32px] w-full">
           <div className="flex max-w-full md:max-w-[768px] flex-col items-center md:items-end gap-[16px] md:gap-[20px]">
             <div className="flex flex-col items-center md:items-end gap-[8px] md:gap-[12px]">
@@ -469,10 +469,10 @@ export default function Home() {
         </div>
 
         {/* Vertical layout on mobile, horizontal on desktop */}
-        <div className="flex flex-col md:flex-row max-w-[1280px] px-[16px] md:px-[32px] gap-[40px] md:gap-[64px] w-full">
+        <div className="flex flex-col md:flex-row max-w-[1280px] px-[16px] md:px-[32px] gap-[40px] md:gap-[64px] w-full overflow-hidden">
           {/* Animated widgets - on top for mobile, on left for desktop */}
           <motion.div
-            className="relative w-full md:w-[600px] grid grid-cols-3 order-2 md:order-1 max-w-full"
+            className="relative w-full md:w-[600px] grid grid-cols-3 order-2 md:order-1 max-w-full overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             animate={hasPlayed ? 'show' : 'hidden'}
@@ -550,8 +550,8 @@ export default function Home() {
           </motion.div>
 
           {/* Content - on top for mobile, on right for desktop */}
-          <div className="flex flex-col md:flex-row gap-y-[32px] md:gap-y-[48px] gap-x-[24px] md:gap-x-[32px] grow-1 shrink-0 basis-0 flex-wrap order-1 md:order-2">
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+          <div className="flex flex-col gap-y-[32px] w-full md:flex-row md:gap-y-[48px] md:gap-x-[32px] order-1 md:order-2 md:flex-wrap">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/control.svg"
                 alt="Control"
@@ -570,7 +570,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img src="/trust.svg" alt="Trust" className="w-[48px] h-[48px]" />
               <div className="flex flex-col gap-[8px] self-stretch">
                 <div className="self-stretch text-gray-900 text-[18px]/normal md:text-xl/normal font-semibold">
@@ -584,7 +584,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/customize.svg"
                 alt="Customize"
@@ -602,7 +602,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/choose.svg"
                 alt="Choose"
@@ -625,7 +625,7 @@ export default function Home() {
       </div>
 
       {/* "Prove It, Without a Doubt" Section */}
-      <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] w-full">
+      <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] w-full overflow-hidden">
         <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col items-center md:items-end gap-[24px] md:gap-[32px] w-full">
           <div className="flex max-w-full md:max-w-[768px] flex-col items-center md:items-end gap-[16px] md:gap-[20px]">
             <div className="flex flex-col items-center md:items-end gap-[8px] md:gap-[12px]">
@@ -645,9 +645,9 @@ export default function Home() {
         </div>
 
         {/* Vertical layout on mobile, horizontal on desktop */}
-        <div className="flex flex-col md:flex-row max-w-[1280px] px-[16px] md:px-[32px] w-full relative items-center justify-between gap-[40px] md:gap-0">
-          <div className="flex flex-col md:flex-row gap-y-[32px] md:gap-y-[48px] gap-x-[24px] md:gap-x-[32px] grow-1 shrink-0 basis-0 flex-wrap w-full md:max-w-[576px]">
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+        <div className="flex flex-col md:flex-row max-w-[1280px] px-[16px] md:px-[32px] w-full relative items-center justify-between gap-[40px] md:gap-0 overflow-hidden">
+          <div className="flex flex-col gap-y-[32px] w-full md:flex-row md:gap-y-[48px] md:gap-x-[32px] md:grow-1 md:shrink-0 md:basis-0 md:flex-wrap md:max-w-[576px]">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/issuance.svg"
                 alt="Issuance"
@@ -665,7 +665,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/digital.svg"
                 alt="Digital"
@@ -682,7 +682,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/verification.svg"
                 alt="Verification"
@@ -699,7 +699,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex min-w-[280px] md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">
+            <div className="flex w-full md:min-w-[240px] flex-col gap-[16px] md:gap-[20px] md:grow-1 md:shrink-0 md:basis-0">
               <img
                 src="/disclosure.svg"
                 alt="Disclosure"
@@ -720,11 +720,11 @@ export default function Home() {
           </div>
 
           {/* Mockup section - positioned below on mobile */}
-          <div className="relative w-full md:w-[560px] bg-gray-100 py-[48px] md:py-[56px] px-[24px] md:pl-[40px] rounded-[24px] max-w-full">
+          <div className="relative w-full md:w-[560px] bg-gray-100 py-[48px] md:py-[56px] px-[24px] md:pl-[40px] rounded-[24px] max-w-full overflow-hidden">
             <img
               src="/mockup.png"
               alt="Mockup"
-              className="w-full h-auto md:mr-[-32px] max-w-full"
+              className="w-full h-auto md:mr-[-32px] max-w-full object-contain"
             />
             <img
               src="/arrow.svg"
@@ -736,7 +736,7 @@ export default function Home() {
       </div>
 
       {/* "We've helped hundreds of global companies" Section */}
-      <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] w-full">
+      <div className="flex flex-col py-[48px] md:py-[96px] items-center gap-[32px] md:gap-[64px] w-full overflow-hidden">
         <div className="flex max-w-[1280px] px-[16px] md:px-[32px] w-full flex-col gap-[32px] md:gap-[64px]">
           <div className="flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-[32px] flex-wrap">
             <div className="flex min-w-[280px] md:min-w-[480px] max-w-full md:max-w-[768px] flex-col gap-[16px] md:gap-[20px] grow-1 shrink-0 basis-0">

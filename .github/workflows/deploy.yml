@@ -2,7 +2,7 @@ name: idntty-landing
 
 on:
   push:
-    branches: [main]
+    branches: [v2]
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.7
         with:
-          ref: main
+          ref: v2
       - uses: pnpm/action-setup@v4
         with:
           version: 10
