@@ -767,7 +767,7 @@ export default function Home() {
                   <Widget
                     size="tiny"
                     type="link-text"
-                    value='{"text": "Women Who Code", "linkUrl": "https://womenwhocode.com"}'
+                    value='{"text": "Women Who Code", "linkUrl": "https://my.idntty.io/klygj7uu8uqd2k522zm9h5bc5x9cfnhoqt2es2g5p/"}'
                   />
                 </div>
               </CarouselItem>
@@ -776,7 +776,7 @@ export default function Home() {
                   <Widget
                     size="tiny"
                     type="link-text"
-                    value='{"text": "CSI", "linkUrl": "https://www.controlsi.co.za/"}'
+                    value='{"text": "CSI", "linkUrl": "https://my.idntty.io/kly4j8e8zajokpmzupknvdjxs62bhg3b5sppzeeb6/"}'
                   />
                 </div>
               </CarouselItem>
@@ -785,7 +785,7 @@ export default function Home() {
                   <Widget
                     size="tiny"
                     type="link-text"
-                    value='{"text": "La Crème", "linkUrl": "https://www.lacreme.kz/"}'
+                    value='{"text": "La Crème", "linkUrl": "https://my.idntty.io/klyb95v9sg7vzfktsy6acyz29sntmbga2y8wtod6v/"}'
                   />
                 </div>
               </CarouselItem>
