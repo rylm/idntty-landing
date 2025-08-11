@@ -189,7 +189,7 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
               Icon={Bookmark}
               strokeClassName="stroke-gray-900 group-hover:stroke-orange-500"
             />
-            <div className="text-center text-base font-medium -tracking-[0.2px] text-gray-900">
+            <div className="px-6 md:px-8 text-center text-base font-medium -tracking-[0.2px] text-gray-900">
               {value?.toString() ?? ''}
             </div>
           </div>
