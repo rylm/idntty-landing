@@ -93,7 +93,7 @@ export default function AboutUs() {
           </div>
           <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-start">
             <img
-              src="/about-us/ancient.png"
+              src="/about-us/ancient.avif"
               alt="Ancient Identity"
               className="h-auto md:h-full w-auto max-w-full object-contain"
             />
@@ -135,7 +135,7 @@ export default function AboutUs() {
           </div>
           <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-end">
             <img
-              src="/about-us/written.png"
+              src="/about-us/written.avif"
               alt="Written Records"
               className="h-auto md:h-full w-auto max-w-full object-contain"
             />
@@ -188,7 +188,7 @@ export default function AboutUs() {
           </div>
           <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-start">
             <img
-              src="/about-us/bureaucratic.png"
+              src="/about-us/bureaucratic.avif"
               alt="Bureaucratic Identity"
               className="h-auto md:h-full w-auto max-w-full object-contain"
             />
@@ -241,7 +241,7 @@ export default function AboutUs() {
           </div>
           <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-end">
             <img
-              src="/about-us/industrial.png"
+              src="/about-us/industrial.avif"
               alt="Industrial Age"
               className="h-auto md:h-full w-auto max-w-full object-contain"
             />
@@ -283,7 +283,7 @@ export default function AboutUs() {
           </div>
           <div className="w-full md:w-1/2 mt-[32px] md:mt-0 flex justify-center md:justify-start">
             <img
-              src="/about-us/digital.png"
+              src="/about-us/digital.avif"
               alt="Digital Age"
               className="h-auto md:h-full w-auto max-w-full object-contain"
             />
@@ -354,7 +354,7 @@ export default function AboutUs() {
           <div className="flex flex-col pb-[48px] md:pb-[96px] items-center -mt-[50px] md:-mt-[100px]">
             <div className="flex max-w-[1280px] px-[16px] md:px-[32px] flex-col items-center">
               <img
-                src="/about-us/future.png"
+                src="/about-us/future.avif"
                 alt="Future"
                 className="w-full md:w-[1280px] h-auto md:h-[560px] shadow-image object-cover rounded-[16px]"
               />
@@ -395,12 +395,12 @@ export default function AboutUs() {
             {/* Top row */}
             <div className="flex flex-wrap justify-center items-end gap-4 mb-4 md:mb-8">
               <img
-                src="/about-us/photo-1.png"
+                src="/about-us/photo-1.avif"
                 alt="Image 1"
                 className="h-auto w-[45%] md:w-auto md:max-w-xs"
               />
               <img
-                src="/about-us/photo-2.png"
+                src="/about-us/photo-2.avif"
                 alt="Image 2"
                 className="h-auto w-[45%] md:w-auto md:max-w-xs"
               />
@@ -409,17 +409,17 @@ export default function AboutUs() {
             {/* Bottom row */}
             <div className="flex flex-wrap justify-center items-start gap-4">
               <img
-                src="/about-us/photo-3.png"
+                src="/about-us/photo-3.avif"
                 alt="Image 3"
                 className="h-auto w-[30%] md:w-auto md:max-w-xs"
               />
               <img
-                src="/about-us/photo-4.png"
+                src="/about-us/photo-4.avif"
                 alt="Image 4"
                 className="h-auto w-[30%] md:w-auto md:max-w-xs"
               />
               <img
-                src="/about-us/photo-5.png"
+                src="/about-us/photo-5.avif"
                 alt="Image 5"
                 className="h-auto w-[30%] md:w-auto md:max-w-xs"
               />

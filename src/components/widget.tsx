@@ -315,7 +315,7 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
             <img
               src={`https://d1nyjrmwcoi38d.cloudfront.net/hobby/${(
                 value?.toString() ?? 'default'
-              ).toLowerCase()}.png`}
+              ).toLowerCase()}.avif`}
               alt={value?.toString() ?? ''}
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -349,7 +349,7 @@ const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
             {...props}
           >
             <img
-              src={`https://d1nyjrmwcoi38d.cloudfront.net/relationship/${internalValue}.png`}
+              src={`https://d1nyjrmwcoi38d.cloudfront.net/relationship/${internalValue}.avif`}
               alt={value?.toString() ?? ''}
               className="absolute inset-0 h-full w-full object-cover"
             />

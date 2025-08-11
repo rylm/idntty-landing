@@ -205,7 +205,7 @@ const calculateGridPositions = (configs: typeof widgetConfigs) => {
 
   // Return only the actual widgets (remove 'occupied' markers)
   return grid.filter(
-    (item): item is typeof widgetConfigs[number] =>
+    (item): item is (typeof widgetConfigs)[number] =>
       item !== null && item !== 'occupied'
   );
 };
@@ -722,7 +722,7 @@ export default function Home() {
           {/* Mockup section - positioned below on mobile */}
           <div className="relative w-full md:w-[560px] bg-gray-100 py-[48px] md:py-[56px] px-[24px] md:pl-[40px] rounded-[24px] max-w-full overflow-hidden">
             <img
-              src="/mockup.png"
+              src="/mockup.avif"
               alt="Mockup"
               className="w-full h-auto md:mr-[-32px] max-w-full object-contain"
             />
